@@ -1,0 +1,68 @@
+[
+    {
+        "title": "🔤 Basic sentence reversal",
+        "description": "Simple case with normal spacing between words 🧩.",
+        "input": "the sky is blue",
+        "output": "blue is sky the"
+    },
+    {
+        "title": "↔️ Leading and trailing spaces",
+        "description": "Input contains extra spaces at the beginning and end ✂️.",
+        "input": "  hello world  ",
+        "output": "world hello"
+    },
+    {
+        "title": "📏 Multiple spaces between words",
+        "description": "Words are separated by more than one space 🔍.",
+        "input": "a good   example",
+        "output": "example good a"
+    },
+    {
+        "title": "1️⃣ Single word",
+        "description": "Only one word should remain unchanged after reversal 🔄.",
+        "input": "hello",
+        "output": "hello"
+    },
+    {
+        "title": "🌫️ Many spaces between two words",
+        "description": "Large number of spaces between two words should be reduced ➡️ one.",
+        "input": "hello     world",
+        "output": "world hello"
+    },
+    {
+        "title": "🔠 Mixed uppercase and lowercase",
+        "description": "Case sensitivity should be preserved 🧠.",
+        "input": "Hello World",
+        "output": "World Hello"
+    },
+    {
+        "title": "🔢 Words with numbers",
+        "description": "Words may contain digits along with letters 🧪.",
+        "input": "test123 code456",
+        "output": "code456 test123"
+    },
+    {
+        "title": "➡️ Trailing spaces only",
+        "description": "Spaces only at the end should be ignored ✂️.",
+        "input": "hello world   ",
+        "output": "world hello"
+    },
+    {
+        "title": "⬅️ Leading spaces only",
+        "description": "Spaces only at the beginning should be ignored ✂️.",
+        "input": "   hello world",
+        "output": "world hello"
+    },
+    {
+        "title": "📚 Multiple words (clean spacing)",
+        "description": "Words separated by single spaces without extras ✅.",
+        "input": "one two three four five",
+        "output": "five four three two one"
+    },
+    {
+        "title": "🧪 Mixed spacing complexity",
+        "description": "Combination of leading, trailing, and multiple spaces 🔄.",
+        "input": "  this   is  a   test  ",
+        "output": "test a is this"
+    }
+]
