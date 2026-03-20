@@ -1,46 +1,74 @@
-# [🔁 Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=top-interview-150)
-Given a string `s`, your task is to **reverse the order of the words** in it.
+# 🔁 Reverse Words in a String:- Split and Reverse Approach
+### 🚀 Overview
+This approach solves the classic **“Reverse Words in a String”** problem by:
+1. 🔍 Extracting individual words from the input
+2. 📦 Storing them in a temporary structure (array / list / vector)
+3. 🔁 Rebuilding the string in **reverse order of words**
 
-### 📌 What is a "word"?
-A word is simply a sequence of **non-space characters**. Words in the string are separated by **one or more spaces**.
+### 🧠 Intuition
+Instead of reversing the entire string character-by-character (which gets tricky with spaces 😵‍💫), we:
+- Treat each word as a unit 🧩
+- Reverse the **order of words**, not characters inside them
 
-### 🎯 Your Goal
-Return a new string where:
-- 🔄 The **order of words is reversed**
-- ✂️ **Extra spaces are removed**
-- 🔹 Only **one space** separates words
-- 🚫 **No leading or trailing spaces**
+### ⚙️ Approach (Step-by-Step)
+#### 🥇 Step 1: Extract Words
+- Traverse the string
+- Build words character-by-character
+- When a space is encountered:
+    - Store the word (if non-empty)
+    - Reset buffer
 
-### 🧠 Examples
-- **Example 1**
-    ```
-    Input:  "the sky is blue"
-    Output: "blue is sky the"
-    ```
-- **Example 2**
-    ```
-    Input:  "  hello world  "
-    Output: "world hello"
-    ```
-    👉 Notice how leading and trailing spaces are removed!
+👉 In Python, this is simplified using:
+- **`strip()`** → removes extra spaces
+- **`split()`** → automatically extracts words
 
-- Example 3
-    ```
-    Input:  "a good   example"
-    Output: "example good a"
-    ```
-    👉 Multiple spaces between words are reduced to just one.
+#### 🥈 Step 2: Store Words
+- Use:
+    - **`char**`** in C
+    - **`vector<string>`** in C++
+    - **`list`** in Python
 
-### ⚙️ Constraints
-- 📏 `1 <= s.length <= 10⁴`
-- 🔤 `s` contains:
-    - Uppercase & lowercase English letters
-    - Digits
-    - Spaces `' '`
-- ✅ There is **at least one word** in the string
+#### 🥉 Step 3: Reverse Traversal
+- Iterate from **last word → first word**
+- Append each word to result
 
-### 💡 Follow-up Challenge
-🔥 If your language allows mutable strings:
-- Can you solve this **in-place**?
-- Using only **O(1) extra space**?
+#### 🧱 Step 4: Build Output
+- Add space **`" "`** between words
+- Avoid trailing spaces ❗
+
+### 🧮 Complexity Analysis
+| **Type**                | **Complexity** |
+| ------------------- | ---------- |
+| ⏱ **Time Complexity**   | **`O(n)`**   |
+| 🧠 **Space Complexity** | **`O(n)`**   |
+
+#### 🔍 Why?
+- Each character is visited once → O(n)
+- Extra storage for words → O(n)
+
+### 🌐 Language Notes
+#### 🟦 C / C++
+- Manual parsing required 🛠️
+- Explicit memory handling (especially in C)
+- Use buffers and dynamic allocation
+
+#### 🐍 Python
+- Much cleaner thanks to built-ins ✨
+- **`split()`** handles multiple spaces automatically
+- **`[::-1]`** simplifies reversal
+
+### ✅ Pros
+- ✔️ Easy to understand and implement
+- ✔️ Works across multiple languages
+- ✔️ Handles extra spaces correctly
+
+### ⚠️ Cons
+- ❌ Uses extra space (not in-place)
+- ❌ Not the most optimal solution for strict constraints
+
+### 🏁 Summary
+This **Split & Reverse** approach is perfect when:
+- You want clarity over optimization 🧘
+- You're writing cross-language solutions 🌍
+- You're preparing for interviews and need a solid baseline
 ---
