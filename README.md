@@ -43,4 +43,19 @@ Return a new string where:
 🔥 If your language allows mutable strings:
 - Can you solve this **in-place**?
 - Using only **O(1) extra space**?
+
+## 🧠 Approaches
+
+| Feature / Aspect             | [**Simple Split & Reverse Approach**](https://github.com/madiv9820/Reverse_Words_in_a_String/tree/Approach_01-Split_and_Reverse) 🟢                                                            | [**In-Place Simulation Approach**](https://github.com/madiv9820/Reverse_Words_in_a_String/tree/Approach_02-Inplace_Reverse) 🔵                                                                                            |
+| ---------------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| **How it works**             | Uses `strip()` → `split()` → `[::-1]` → `join()` 🧹🔄                                             | Converts string to list, normalizes spaces, reverses full list, then reverses each word individually 📝🧩🔄                    |
+| **Steps**                    | 1. Remove leading/trailing spaces 🚫 2. Split words 🧹 3. Reverse words 🔄 4. Join with spaces 🎯 | 1. Convert string → list 📝 2. Normalize spaces 🧹 3. Reverse entire list 🔄 4. Reverse each word 🔄 5. Join back to string 🎉 |
+| **In-place possible?**       | ❌ Strings immutable; creates a new string 💾                                                      | ✅ Simulates in-place using a list; can be fully in-place for C/C++ style 🔧                                                    |
+| **Space Complexity**         | O(n) 💾 (new list of words + output string)                                                       | O(n) 💾 (mutable list of characters)                                                                                           |
+| **Time Complexity**          | O(n) ⏱️ (traverse string + split + join)                                                          | O(n) ⏱️ (traverse string + normalize + reverse)                                                                                |
+| **Handles multiple spaces?** | ✅ Automatically handled by `split()` 🧹                                                           | ✅ Explicitly handled in `normalizeSpaces()` ✨                                                                                  |
+| **Code simplicity**          | ✅ Very concise, easy to read 😄                                                                   | ⚡ More detailed, lower-level, good for interview understanding 🧩                                                              |
+| **Best use case**            | Quick solution, Pythonic, readable, short ⏱️                                                      | Simulating in-place behavior, learning mechanics of reversal 🔄, C/C++ adaptation                                              |
+| **Emoji summary**            | 🧹🔄🎯                                                                                            | 📝🧹🔄🧩🎉                                                                                                                     |
+
 ---
