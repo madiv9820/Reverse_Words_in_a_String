@@ -1,46 +1,89 @@
-# [🔁 Reverse Words in a String](https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=study-plan-v2&envId=top-interview-150)
-Given a string `s`, your task is to **reverse the order of the words** in it.
+# 🔁 Reverse Words in a String - Inplace Reverse Approach
 
-### 📌 What is a "word"?
-A word is simply a sequence of **non-space characters**. Words in the string are separated by **one or more spaces**.
+### 🚀 Overview
+This approach solves the classic “Reverse Words in a String” problem by:
+- **🧹 Normalizing spaces** — remove leading/trailing spaces and reduce multiple spaces to one
+- **🔄 Reversing the entire string**
+- **🧩 Reversing each word individually** to restore proper orientation
 
-### 🎯 Your Goal
-Return a new string where:
-- 🔄 The **order of words is reversed**
-- ✂️ **Extra spaces are removed**
-- 🔹 Only **one space** separates words
-- 🚫 **No leading or trailing spaces**
+### 🧠 Intuition
+- Treat **each word as a unit 🧩**
+- Reverse **the order of words**, not the characters inside them
+- Steps are identical across languages:
+    1. Clean spaces
+    2. Reverse the full string
+    3. Reverse each word individually
+- ✅ In **C/C++**, this can be done fully in-place
+- 🐍 In **Python**, a mutable list is used to simulate in-place behavior
 
-### 🧠 Examples
-- **Example 1**
+### ⚙️ Step-by-Step Approach
+#### 🥇 Step 1: Normalize / Clean Spaces
+- Remove leading/trailing spaces
+- Collapse multiple spaces into one
+- Example:
     ```
-    Input:  "the sky is blue"
-    Output: "blue is sky the"
+    "  hello   world  " -> "hello world"
     ```
-- **Example 2**
-    ```
-    Input:  "  hello world  "
-    Output: "world hello"
-    ```
-    👉 Notice how leading and trailing spaces are removed!
 
-- Example 3
+#### 🥈 Step 2: Reverse Entire String
+- Reverse all characters
+- Example:
     ```
-    Input:  "a good   example"
-    Output: "example good a"
+    "hello world" -> "dlrow olleh"
     ```
-    👉 Multiple spaces between words are reduced to just one.
 
-### ⚙️ Constraints
-- 📏 `1 <= s.length <= 10⁴`
-- 🔤 `s` contains:
-    - Uppercase & lowercase English letters
-    - Digits
-    - Spaces `' '`
-- ✅ There is **at least one word** in the string
+#### 🥉 Step 3: Reverse Each Word Individually
+- Iterate through the string/list
+- Reverse characters of each word (between spaces)
+- Example:
+    ```
+    "dlrow olleh" -> "world hello"
+    ```
 
-### 💡 Follow-up Challenge
-🔥 If your language allows mutable strings:
-- Can you solve this **in-place**?
-- Using only **O(1) extra space**?
+#### 🧱 Step 4: Build / Return Output
+- **C**: can use **`malloc`** for output, or reverse **in-place** ✅
+- **C++**: use **`string`** iterators and STL **`reverse`** for fully in-place 🔄
+- **Python**: strings are immutable, so use a list or build a new string 📝
+
+### 🧮 Complexity Analysis
+| **Language** | **Time Complexity** | **Space Complexity** | **In-Place**?                   |
+| -------- | --------------- | ---------------- | --------------------------- |
+| C        | O(n) ⏱️         | O(n) optional 💾 | ✅ Yes (if reversing in `s`)  |
+| C++      | O(n) ⏱️         | O(1) (in-place)  | ✅ Yes                       |
+| Python   | O(n) ⏱️         | O(n) 💾          | ❌ No (strings immutable)    |
+
+
+### 🌐 Language Notes
+#### 🟦 C
+- Manual parsing and memory management required 🛠️
+- Optional in-place by reversing words directly in the original string
+
+#### 🟦 C++
+- STL `reverse` + string iterators make in-place reversal simple ⚡
+- No extra allocations required if reversing in the original string
+
+#### 🐍 Python
+- Strings are immutable 🚫
+- Extra memory required to simulate in-place with **`list(s)`**
+- Functions: **`normalizeSpaces`**, **`reverse`** (on list), then rebuild string
+
+### ✅ Pros
+- Clear and easy to understand 🧘
+- Works across C, C++, Python 🌍
+- Handles extra spaces correctly 🧹
+- Optional in-place solution in C/C++ ✅
+
+### ⚠️ Cons
+- Python requires extra memory 💾
+- Slightly more complex than simple split & reverse
+- Not optimal if strict **O(1) space** is required in Python
+
+### 🔹 Summary
+This **Clean & In-Place** approach works consistently across **C, C++, and Python**, making it ideal for:
+- 🧩 Interview preparation
+- 🌍 Cross-language implementations
+- ✨ Understanding string reversal and word handling mechanics
+
+Bonus: In **C**, you can avoid extra memory by skipping the output buffer and performing **all reversals directly in the original string ✅**
+
 ---
